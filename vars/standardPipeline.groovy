@@ -1,7 +1,6 @@
-import com.bmc.dsm.jenkinslib.git.GitOpeartions
 
 def call(body) {
-        def gitOps = new GitOpeartions();
+        
         def config = [:]
         body.resolveStrategy = Closure.DELEGATE_FIRST
         body.delegate = config
@@ -13,7 +12,7 @@ def call(body) {
 
             try {
                 stage ('Clone') {
-                    gitOps.checkout("https://github.com/hborkhade/shared-library.git","master");
+                    checkout scm
                 }
                 stage ('Build') {
                     sh "echo 'building ${config.projectName} ...'"
