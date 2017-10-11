@@ -14,7 +14,7 @@ def call(body) {
                 
                 stage ('Build') {
                         echo 'building {config.projectName} ...'
-                        config.projectName
+                        echo config.projectName
                 }
                 stage ('Tests') {
                     parallel 'static': {
