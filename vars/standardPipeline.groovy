@@ -36,7 +36,7 @@ def call(body) {
                 throw err
             }
         }
-        
-        def projectName() {return "Project2"}
-        def serverDomain() {return "Project2 Server Domain"}
     }
+
+def projectName() {return "Project2"}
+def serverDomain() {return "Project2 Server Domain"}
