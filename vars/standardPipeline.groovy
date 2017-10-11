@@ -13,8 +13,8 @@ def call(body) {
             try {
                 
                 stage ('Build') {
-                        echo 'building {config.projectName} ...'
-                        echo config.projectName
+                        echo 'building ' config.projectName ' ...'
+                        config.projectName = "Project2"
                 }
                 stage ('Tests') {
                     parallel 'static': {
@@ -28,7 +28,8 @@ def call(body) {
                     }
                 }
                 stage ('Deploy') {
-                        echo 'deploying to server {config.serverDomain}...'
+                        echo 'deploying to server ' config.serverDomain ' ...'
+                        config.serverDomain = "Project2 Server Domain"
                 }
             } catch (err) {
                 currentBuild.result = 'FAILED'
