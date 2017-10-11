@@ -7,6 +7,6 @@ class Load implements Serializable {
   Load() {
     this.projectName = "Project2"
     this.serverDomain = "Project2 server domain"
-    this.dynamicProperty = "${MSG} this is Dynamic property"
+    this.dynamicProperty = "${env.MSG} this is Dynamic property"
   }
 }
