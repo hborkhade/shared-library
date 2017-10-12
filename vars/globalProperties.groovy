@@ -4,10 +4,10 @@ class Load implements Serializable {
     def serverDomain
     def dynamicProperty
     
-    Load(SomeMSG) {
+    Load(script) {
       this.projectName = "Project2"
       this.serverDomain = "Project2 server domain"
-      this.dynamicProperty = "${SomeMSG} this is Dynamic property"
+      this.dynamicProperty = "${script.env.MSG} this is Dynamic property"
     }
   
 }
