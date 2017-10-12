@@ -10,7 +10,8 @@ class Load implements Serializable {
     def projectName
     def serverDomain
     def dynamicProperty
-
+    def MSG
+    
     Load() {
       this.projectName = "Project2"
       this.serverDomain = "Project2 server domain"
