@@ -1,12 +1,20 @@
 class Load implements Serializable {
 
-  def projectName
-  def serverDomain
-  def dynamicProperty
+  def call ( body ) {
+
+    def config = [:]
+    body.resolveStrategy = Closure.DELEGATE_FIRST
+    body.delegate = config
+    body()
     
-  Load() {
-    this.projectName = "Project2"
-    this.serverDomain = "Project2 server domain"
-    this.dynamicProperty = "${MSG} this is Dynamic property"
+    def projectName
+    def serverDomain
+    def dynamicProperty
+
+    Load() {
+      this.projectName = "Project2"
+      this.serverDomain = "Project2 server domain"
+      this.dynamicProperty = "${config.MSG} this is Dynamic property"
+    }
   }
 }
