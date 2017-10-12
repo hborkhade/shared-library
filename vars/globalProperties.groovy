@@ -10,6 +10,6 @@ class Load implements Serializable {
       
     }
   def call() {
-      this.dynamicProperty = "${env.MSG} this is Dynamic property"
+      this.dynamicProperty = env.MSG " this is Dynamic property"
   }
 }
